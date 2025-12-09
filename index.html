@@ -27,86 +27,34 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             background: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 16px; /* Rounded-2xl */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* shadow-xl */
             overflow: hidden;
             padding-bottom: 20px;
         }
 
-        /* Compact Header */
+        /* Header */
         header {
             background-color: var(--dark-purple);
             color: var(--white);
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
         header p {
             margin-top: 5px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--light-purple);
         }
-
-        /* IMAGE WRAPPER */
-        .img-wrapper {
-            position: relative;
-            background-color: #e0e0e0;
-            border: 2px dashed #999;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-        }
-
-        .placeholder-content {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            z-index: 1;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .placeholder-content svg {
-            width: 30px;
-            height: 30px;
-            fill: #777;
-            margin-bottom: 5px;
-        }
-
-        .placeholder-content span {
-            font-size: 0.8rem;
-            font-weight: bold;
-            font-family: monospace;
-            background: rgba(255,255,255,0.8);
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-
-        .img-wrapper img {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Adjusted Heights for Compact View */
-        .h-content { height: 220px; border-radius: 6px; margin: 15px 0; }
-        .h-card { height: 140px; border-bottom: 3px solid var(--bright-green); }
 
         /* Navigation Tabs */
         .tabs {
@@ -124,46 +72,59 @@
             border: none;
             background: var(--white);
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--med-purple);
             transition: all 0.2s;
-            border-bottom: 3px solid transparent;
+            border-bottom: 4px solid transparent;
         }
 
         .tab-btn:hover { background-color: #f9f9f9; color: var(--dark-purple); }
-        .tab-btn.active { color: var(--dark-purple); border-bottom: 3px solid var(--bright-green); }
+        .tab-btn.active { color: var(--dark-purple); border-bottom: 4px solid var(--bright-green); }
 
         /* Content Sections */
         .content-section {
-            padding: 25px;
+            padding: 30px;
             display: none;
             animation: fadeIn 0.4s ease-in-out;
         }
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+        /* NEW IMAGE STYLING (Matching your snippet) */
+        .styled-img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px; /* rounded-lg/xl */
+            margin-bottom: 15px; /* mb-3 */
+            border: 4px solid var(--light-purple); /* border-[#C3ACE8] */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Typography */
         h2 {
             color: var(--dark-purple);
-            border-left: 4px solid var(--bright-green);
-            padding-left: 10px;
+            border-left: 5px solid var(--bright-green);
+            padding-left: 15px;
             margin-top: 0;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
         h3 {
             color: var(--bright-green);
-            margin-top: 20px;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            margin-top: 25px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
         ul { padding-left: 0; margin-top: 0; }
         ul li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
         ul li::before {
             content: "✔";
@@ -173,67 +134,81 @@
             left: 0;
         }
 
-        /* Compact Card Grid */
+        /* CARDS (Matching the 'Healthcare Team' card style) */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .flip-card {
-            background-color: var(--bg-grey);
-            border-radius: 8px;
-            overflow: hidden;
+            background-color: var(--white);
+            border-radius: 12px; /* rounded-xl */
+            padding: 16px; /* p-4 */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* shadow-md */
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: transform 0.2s;
-            border: 1px solid #e0e0e0;
+            border-top: 4px solid var(--soft-green); /* border-t-4 border-[#96BF78] */
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
 
-        .flip-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .flip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* hover:shadow-lg */
+        }
 
-        .card-body { padding: 15px; }
+        /* Images inside cards */
+        .card-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px; /* rounded-lg */
+            margin-bottom: 12px; /* mb-3 */
+            border: 4px solid var(--soft-green); /* border-[#96BF78] */
+        }
 
         .card-title {
             font-weight: 700;
             color: var(--dark-purple);
-            font-size: 1rem;
-            margin-bottom: 0;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .toggle-icon { font-size: 0.8rem; color: var(--bright-green); transition: transform 0.3s; }
+        .toggle-icon { font-size: 0.9rem; color: var(--bright-green); transition: transform 0.3s; }
 
         .card-content {
             display: none;
             color: var(--text-dark);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #eee;
         }
 
-        .flip-card.open .card-content { display: block; animation: slideDown 0.2s; }
+        .flip-card.open .card-content { display: block; animation: slideDown 0.3s; }
         .flip-card.open .toggle-icon { transform: rotate(180deg); }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Tip Boxes */
         .tip-box {
             background-color: #f9fcf7;
-            border-left: 4px solid var(--bright-green);
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 0 6px 6px 0;
-            font-size: 0.95rem;
+            border-left: 5px solid var(--bright-green);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1rem;
         }
 
         @media (max-width: 600px) {
             header { padding: 20px 15px; }
-            h1 { font-size: 1.3rem; }
+            h1 { font-size: 1.4rem; }
             .content-section { padding: 20px; }
-            .h-content { height: 180px; }
         }
     </style>
 </head>
@@ -255,15 +230,10 @@
     <section id="before" class="content-section active">
         <h2>Before the Patient Enters</h2>
         
-        <!-- SINGLE IMAGE: Combined Prep/Greeting context -->
-        <div class="img-wrapper h-content">
-            <div class="placeholder-content">
-                <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                <span>before_general.jpg</span>
-            </div>
-            <!-- UPDATED PATH: DAPALMS1/communication -->
-            <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/before_general.jpg" alt="Dental Assistant smiling and preparing room" onerror="this.style.display='none'">
-        </div>
+        <!-- Image styled like your snippet -->
+        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/before_general.jpg" 
+             alt="Dental Assistant smiling and preparing room" 
+             class="styled-img">
 
         <p>Effective communication starts early. This phase sets the tone for the entire appointment.</p>
 
@@ -294,91 +264,62 @@
         <div class="card-grid">
             <!-- Card 1 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <div class="img-wrapper h-card">
-                    <div class="placeholder-content">
-                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>leg_tap.jpg</span>
-                    </div>
-                    <!-- UPDATED PATH: DAPALMS1/communication -->
-                    <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/leg_tap.jpg" alt="Leg tap" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div class="card-title">The Leg Tap <span class="toggle-icon">▼</span></div>
-                    <div class="card-content">
-                        Because you sit close together, the dentist might gently tap your leg. It's a discreet way to get attention without the patient noticing.
-                    </div>
+                <!-- Image inside padding with border -->
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/leg_tap.jpg" 
+                     alt="Leg tap" 
+                     class="card-img">
+                
+                <div class="card-title">The Leg Tap <span class="toggle-icon">▼</span></div>
+                <div class="card-content">
+                    Because you sit close together, the dentist might gently tap your leg. It's a discreet way to get attention without the patient noticing.
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <div class="img-wrapper h-card">
-                    <div class="placeholder-content">
-                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>lip_retract.jpg</span>
-                    </div>
-                    <!-- UPDATED PATH: DAPALMS1/communication -->
-                    <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/lip_retract.jpg" alt="Lip retract" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div class="card-title">"Can I help with the lip?" <span class="toggle-icon">▼</span></div>
-                    <div class="card-content">
-                        A polite 'trigger' code to warn the dentist they are pressing on a patient's numb lip, allowing them to adjust without alarm.
-                    </div>
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/lip_retract.jpg" 
+                     alt="Lip retract" 
+                     class="card-img">
+
+                <div class="card-title">"Can I help with the lip?" <span class="toggle-icon">▼</span></div>
+                <div class="card-content">
+                    A polite 'trigger' code to warn the dentist they are pressing on a patient's numb lip, allowing them to adjust without alarm.
                 </div>
             </div>
 
             <!-- Card 3 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <div class="img-wrapper h-card">
-                    <div class="placeholder-content">
-                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>code_words.jpg</span>
-                    </div>
-                    <!-- UPDATED PATH: DAPALMS1/communication -->
-                    <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/code_words.jpg" alt="Code words" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Code Words <span class="toggle-icon">▼</span></div>
-                    <div class="card-content">
-                        Specific words for emergencies. E.g., asking for an "X-ray" might actually mean "Check the front desk" or "The patient looks unwell."
-                    </div>
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/code_words.jpg" 
+                     alt="Code words" 
+                     class="card-img">
+
+                <div class="card-title">Code Words <span class="toggle-icon">▼</span></div>
+                <div class="card-content">
+                    Specific words for emergencies. E.g., asking for an "X-ray" might actually mean "Check the front desk" or "The patient looks unwell."
                 </div>
             </div>
 
             <!-- Card 4 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <div class="img-wrapper h-card">
-                    <div class="placeholder-content">
-                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>time_for_a_break.jpg</span>
-                    </div>
-                    <!-- UPDATED PATH: DAPALMS1/communication -->
-                    <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/time_for_a_break.jpg" alt="Safety stop - time for a break" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div class="card-title">"Time for a break" <span class="toggle-icon">▼</span></div>
-                    <div class="card-content">
-                        If there is a safety breach (e.g., broken instrument), use this phrase to stop the procedure immediately so the issue can be fixed.
-                    </div>
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/time_for_a_break.jpg" 
+                     alt="Safety stop - time for a break" 
+                     class="card-img">
+
+                <div class="card-title">"Time for a break" <span class="toggle-icon">▼</span></div>
+                <div class="card-content">
+                    If there is a safety breach (e.g., broken instrument), use this phrase to stop the procedure immediately so the issue can be fixed.
                 </div>
             </div>
 
             <!-- Card 5 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <div class="img-wrapper h-card">
-                    <div class="placeholder-content">
-                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>eye_contact.jpg</span>
-                    </div>
-                    <!-- UPDATED PATH: DAPALMS1/communication -->
-                    <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/eye_contact.jpg" alt="Eye contact" onerror="this.style.display='none'">
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Eye Contact <span class="toggle-icon">▼</span></div>
-                    <div class="card-content">
-                        Watching the dentist's eyes helps you anticipate their next move. It also conveys honesty and readiness.
-                    </div>
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/eye_contact.jpg" 
+                     alt="Eye contact" 
+                     class="card-img">
+
+                <div class="card-title">Eye Contact <span class="toggle-icon">▼</span></div>
+                <div class="card-content">
+                    Watching the dentist's eyes helps you anticipate their next move. It also conveys honesty and readiness.
                 </div>
             </div>
         </div>
@@ -388,15 +329,10 @@
     <section id="after" class="content-section">
         <h2>After Treatment & Teamwork</h2>
         
-        <!-- SINGLE IMAGE: Combined Team Context -->
-        <div class="img-wrapper h-content">
-            <div class="placeholder-content">
-                <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                <span>clean_up.jpg</span>
-            </div>
-            <!-- UPDATED PATH: DAPALMS1/communication -->
-            <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/clean_up.jpg" alt="Dental team discussion" onerror="this.style.display='none'">
-        </div>
+        <!-- Image styled like your snippet -->
+        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/clean_up.jpg" 
+             alt="Dental team discussion" 
+             class="styled-img" style="border-color: var(--med-purple);">
 
         <p>Communication defines the culture of the practice. Being a good team player involves actions, not just words.</p>
 
