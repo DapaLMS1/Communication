@@ -23,11 +23,11 @@
             color: var(--text-dark);
             margin: 0;
             padding: 0;
-            line-height: 1.5; /* Slightly tighter line height */
+            line-height: 1.5;
         }
 
         .container {
-            max-width: 800px; /* Slightly narrower container */
+            max-width: 800px;
             margin: 20px auto;
             background: var(--white);
             border-radius: 10px;
@@ -40,13 +40,13 @@
         header {
             background-color: var(--dark-purple);
             color: var(--white);
-            padding: 25px 20px; /* Reduced padding */
+            padding: 25px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.6rem; /* Smaller title */
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
@@ -136,7 +136,7 @@
 
         /* Content Sections */
         .content-section {
-            padding: 25px; /* Reduced padding */
+            padding: 25px;
             display: none;
             animation: fadeIn 0.4s ease-in-out;
         }
@@ -342,14 +342,16 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Card 4: FIXED FILENAME (UNDERSCORES) -->
             <div class="flip-card" onclick="toggleCard(this)">
                 <div class="img-wrapper h-card">
                     <div class="placeholder-content">
                         <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-                        <span>images/during_safety_stop.jpg</span>
+                        <!-- Updated filename in placeholder -->
+                        <span>images/time_for_a_break.jpg</span>
                     </div>
-                    <img src="images/during_safety_stop.jpg" alt="Safety stop" onerror="this.style.display='none'">
+                    <!-- Updated src and alt -->
+                    <img src="images/time_for_a_break.jpg" alt="Safety stop - time for a break" onerror="this.style.display='none'">
                 </div>
                 <div class="card-body">
                     <div class="card-title">"Time for a break" <span class="toggle-icon">▼</span></div>
