@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Strategies for the Dental Assistant</title>
+    <style>
+        /* Brand Colours Variables */
+        :root {
+            --dark-purple: #532A8C;
+            --med-purple: #9D8ABB;
+            --light-purple: #C3ACE8;
+            --bright-green: #7ABF49;
+            --soft-green: #96BF78;
+            --bg-grey: #F2F2F2;
+            --white: #ffffff;
+            --text-dark: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-grey);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5; /* Slightly tighter line height */
+        }
+
+        .container {
+            max-width: 800px; /* Slightly narrower container */
+            margin: 20px auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        /* Compact Header */
+        header {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 25px 20px; /* Reduced padding */
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem; /* Smaller title */
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1rem;
+            color: var(--light-purple);
+        }
+
+        /* IMAGE WRAPPER */
+        .img-wrapper {
+            position: relative;
+            background-color: #e0e0e0;
+            border: 2px dashed #999;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+        }
+
+        .placeholder-content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            z-index: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .placeholder-content svg {
+            width: 30px;
+            height: 30px;
+            fill: #777;
+            margin-bottom: 5px;
+        }
+
+        .placeholder-content span {
+            font-size: 0.8rem;
+            font-weight: bold;
+            font-family: monospace;
+            background: rgba(255,255,255,0.8);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .img-wrapper img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Adjusted Heights for Compact View */
+        .h-content { height: 220px; border-radius: 6px; margin: 15px 0; }
+        .h-card { height: 140px; border-bottom: 3px solid var(--bright-green); }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--bg-grey);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px 5px;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--med-purple);
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover { background-color: #f9f9f9; color: var(--dark-purple); }
+        .tab-btn.active { color: var(--dark-purple); border-bottom: 3px solid var(--bright-green); }
+
+        /* Content Sections */
+        .content-section {
+            padding: 25px; /* Reduced padding */
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .content-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 {
+            color: var(--dark-purple);
+            border-left: 4px solid var(--bright-green);
+            padding-left: 10px;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            color: var(--bright-green);
+            margin-top: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        ul { padding-left: 0; margin-top: 0; }
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        ul li::before {
+            content: "✔";
+            color: var(--bright-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Compact Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .flip-card {
+            background-color: var(--bg-grey);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .flip-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .card-body { padding: 15px; }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--dark-purple);
+            font-size: 1rem;
+            margin-bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-icon { font-size: 0.8rem; color: var(--bright-green); transition: transform 0.3s; }
+
+        .card-content {
+            display: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .flip-card.open .card-content { display: block; animation: slideDown 0.2s; }
+        .flip-card.open .toggle-icon { transform: rotate(180deg); }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Tip Boxes */
+        .tip-box {
+            background-color: #f9fcf7;
+            border-left: 4px solid var(--bright-green);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 20px 15px; }
+            h1 { font-size: 1.3rem; }
+            .content-section { padding: 20px; }
+            .h-content { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Communication Strategies</h1>
+        <p>Connecting the Dentist, the Patient, and the Team</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'before')">Before Treatment</button>
+        <button class="tab-btn" onclick="openTab(event, 'during')">During (Secret Language)</button>
+        <button class="tab-btn" onclick="openTab(event, 'after')">After & Teamwork</button>
+    </nav>
+
+    <!-- TAB 1: BEFORE -->
+    <section id="before" class="content-section active">
+        <h2>Before the Patient Enters</h2>
+        
+        <!-- SINGLE IMAGE: Combined Prep/Greeting context -->
+        <div class="img-wrapper h-content">
+            <div class="placeholder-content">
+                <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                <span>images/before_general.jpg</span>
+            </div>
+            <img src="images/before_general.jpg" alt="Dental Assistant smiling and preparing room" onerror="this.style.display='none'">
+        </div>
+
+        <p>Effective communication starts early. This phase sets the tone for the entire appointment.</p>
+
+        <h3>1. Preparation & Environment</h3>
+        <ul>
+            <li><strong>Check details:</strong> Know the correct patient file and procedure.</li>
+            <li><strong>The Room:</strong> A clean surgery communicates safety without words.</li>
+            <li><strong>Calm Yourself:</strong> If you are stressed, the patient will feel it.</li>
+        </ul>
+
+        <h3>2. The Meet and Greet</h3>
+        <ul>
+            <li>Smile warmly (your eyes smile even behind a mask).</li>
+            <li>Use their name clearly and politely.</li>
+            <li>Guide them to the chair—don't just walk off.</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>Annie's Tip:</strong> Communication is 55% facial expression. Be aware of your face—if you look worried or rushed, the patient will feel unsafe.
+        </div>
+    </section>
+
+    <!-- TAB 2: DURING -->
+    <section id="during" class="content-section">
+        <h2>The "Secret Language"</h2>
+        <p>You often cannot speak freely during a procedure. DAs and Dentists use non-verbal cues. <strong>Click to reveal:</strong></p>
+
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <div class="flip-card" onclick="toggleCard(this)">
+                <div class="img-wrapper h-card">
+                    <div class="placeholder-content">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <span>images/during_leg_tap.jpg</span>
+                    </div>
+                    <img src="images/during_leg_tap.jpg" alt="Leg tap" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">The Leg Tap <span class="toggle-icon">▼</span></div>
+                    <div class="card-content">
+                        Because you sit close together, the dentist might gently tap your leg. It's a discreet way to get attention without the patient noticing.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card" onclick="toggleCard(this)">
+                <div class="img-wrapper h-card">
+                    <div class="placeholder-content">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <span>images/during_lip_retract.jpg</span>
+                    </div>
+                    <img src="images/during_lip_retract.jpg" alt="Lip retract" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">"Can I help with the lip?" <span class="toggle-icon">▼</span></div>
+                    <div class="card-content">
+                        A polite 'trigger' code to warn the dentist they are pressing on a patient's numb lip, allowing them to adjust without alarm.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card" onclick="toggleCard(this)">
+                <div class="img-wrapper h-card">
+                    <div class="placeholder-content">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <span>images/during_code_words.jpg</span>
+                    </div>
+                    <img src="images/during_code_words.jpg" alt="Code words" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Code Words <span class="toggle-icon">▼</span></div>
+                    <div class="card-content">
+                        Specific words for emergencies. E.g., asking for an "X-ray" might actually mean "Check the front desk" or "The patient looks unwell."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card" onclick="toggleCard(this)">
+                <div class="img-wrapper h-card">
+                    <div class="placeholder-content">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <span>images/during_safety_stop.jpg</span>
+                    </div>
+                    <img src="images/during_safety_stop.jpg" alt="Safety stop" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">"Time for a break" <span class="toggle-icon">▼</span></div>
+                    <div class="card-content">
+                        If there is a safety breach (e.g., broken instrument), use this phrase to stop the procedure immediately so the issue can be fixed.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="flip-card" onclick="toggleCard(this)">
+                <div class="img-wrapper h-card">
+                    <div class="placeholder-content">
+                        <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        <span>images/during_eye_contact.jpg</span>
+                    </div>
+                    <img src="images/during_eye_contact.jpg" alt="Eye contact" onerror="this.style.display='none'">
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Eye Contact <span class="toggle-icon">▼</span></div>
+                    <div class="card-content">
+                        Watching the dentist's eyes helps you anticipate their next move. It also conveys honesty and readiness.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 3: AFTER -->
+    <section id="after" class="content-section">
+        <h2>After Treatment & Teamwork</h2>
+        
+        <!-- SINGLE IMAGE: Combined Team Context -->
+        <div class="img-wrapper h-content">
+            <div class="placeholder-content">
+                <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                <span>images/after_general.jpg</span>
+            </div>
+            <img src="images/after_general.jpg" alt="Dental team discussion" onerror="this.style.display='none'">
+        </div>
+
+        <p>Communication defines the culture of the practice. Being a good team player involves actions, not just words.</p>
+
+        <h3>The Unwritten Rules</h3>
+        <ul>
+            <li><strong>Restock immediately:</strong> Don't leave an empty box for a colleague in a rush.</li>
+            <li><strong>Status Updates:</strong> If you can't finish a task, tell your team: <em>"I'm just leaving that there."</em></li>
+        </ul>
+
+        <div class="tip-box" style="border-left-color: var(--dark-purple);">
+            <strong>Feedback - The "No Blame" Approach:</strong> <br>
+            Issues like incorrect PPE use should be discussed in team meetings without blame. Focus on how the <em>team</em> can improve, rather than punishing an individual.
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, contentSection, tabBtn;
+        contentSection = document.getElementsByClassName("content-section");
+        for (i = 0; i < contentSection.length; i++) {
+            contentSection[i].className = contentSection[i].className.replace(" active", "");
+        }
+        tabBtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtn.length; i++) {
+            tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).className += " active";
+        evt.currentTarget.className += " active";
+    }
+    function toggleCard(card) {
+        card.classList.toggle("open");
+    }
+</script>
+
+</body>
+</html>
