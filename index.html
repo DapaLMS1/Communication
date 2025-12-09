@@ -30,8 +30,8 @@
             max-width: 900px;
             margin: 20px auto;
             background: var(--white);
-            border-radius: 16px; /* Rounded-2xl */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* shadow-xl */
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
             overflow: hidden;
             padding-bottom: 20px;
         }
@@ -91,15 +91,15 @@
         .content-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* NEW IMAGE STYLING (Matching your snippet) */
+        /* IMAGE STYLING */
         .styled-img {
             width: 100%;
             height: auto;
             max-height: 300px;
             object-fit: cover;
-            border-radius: 12px; /* rounded-lg/xl */
-            margin-bottom: 15px; /* mb-3 */
-            border: 4px solid var(--light-purple); /* border-[#C3ACE8] */
+            border-radius: 12px; 
+            margin-bottom: 15px; 
+            border: 4px solid var(--light-purple); 
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
@@ -134,7 +134,7 @@
             left: 0;
         }
 
-        /* CARDS (Matching the 'Healthcare Team' card style) */
+        /* CARDS */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -144,12 +144,12 @@
 
         .flip-card {
             background-color: var(--white);
-            border-radius: 12px; /* rounded-xl */
-            padding: 16px; /* p-4 */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* shadow-md */
+            border-radius: 12px; 
+            padding: 16px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
             transition: all 0.3s ease;
             cursor: pointer;
-            border-top: 4px solid var(--soft-green); /* border-t-4 border-[#96BF78] */
+            border-top: 4px solid var(--soft-green); 
             border-left: 1px solid #eee;
             border-right: 1px solid #eee;
             border-bottom: 1px solid #eee;
@@ -157,7 +157,7 @@
 
         .flip-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* hover:shadow-lg */
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
         }
 
         /* Images inside cards */
@@ -165,9 +165,9 @@
             width: 100%;
             height: 150px;
             object-fit: cover;
-            border-radius: 8px; /* rounded-lg */
-            margin-bottom: 12px; /* mb-3 */
-            border: 4px solid var(--soft-green); /* border-[#96BF78] */
+            border-radius: 8px; 
+            margin-bottom: 12px; 
+            border: 4px solid var(--soft-green); 
         }
 
         .card-title {
@@ -217,21 +217,21 @@
 <div class="container">
     <header>
         <h1>Communication Strategies</h1>
-        <p>Connecting the Dental Operator, the Patient, and the Team</p>
+        <p>Connecting the Dentist, the Patient, and the Team</p>
     </header>
 
     <nav class="tabs">
         <button class="tab-btn active" onclick="openTab(event, 'before')">Before Treatment</button>
         <button class="tab-btn" onclick="openTab(event, 'during')">During (Secret Language)</button>
-        <button class="tab-btn" onclick="openTab(event, 'after')">After & Teamwork</button>
+        <button class="tab-btn" onclick="openTab(event, 'after')">After and Teamwork</button>
     </nav>
 
     <!-- TAB 1: BEFORE -->
     <section id="before" class="content-section active">
         <h2>Before the Patient Enters</h2>
         
-        <!-- Image styled like your snippet -->
-        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/before_general.jpg" 
+        <!-- GitHub Path -->
+        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/before_the_patient_enters.jpg" 
              alt="Dental Assistant smiling and preparing room" 
              class="styled-img">
 
@@ -259,31 +259,32 @@
     <!-- TAB 2: DURING -->
     <section id="during" class="content-section">
         <h2>The "Secret Language"</h2>
-        <p>You often cannot speak freely during a procedure. DAs and Dental Operators use non-verbal cues. <strong>Click to reveal:</strong></p>
+        <p>You often cannot speak freely during a procedure. DAs and Dentists use non-verbal cues. <strong>Click to reveal:</strong></p>
 
         <div class="card-grid">
             <!-- Card 1 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <!-- Image inside padding with border -->
-                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/leg_tap.jpg" 
+                <!-- GitHub Path -->
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/the_leg_tap.jpg" 
                      alt="Leg tap" 
                      class="card-img">
                 
                 <div class="card-title">The Leg Tap <span class="toggle-icon">▼</span></div>
                 <div class="card-content">
-                    Because you sit close together, the Dental Operator might gently tap your leg. It's a discreet way to get attention without the patient noticing.
+                    Because you sit close together, the dentist might gently tap your leg. It's a discreet way to get attention without the patient noticing.
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="flip-card" onclick="toggleCard(this)">
-                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/lip_retract.jpg" 
+                <!-- GitHub Path -->
+                <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/can_i_help_with_the_lip.jpg" 
                      alt="Lip retract" 
                      class="card-img">
 
                 <div class="card-title">"Can I help with the lip?" <span class="toggle-icon">▼</span></div>
                 <div class="card-content">
-                    A polite 'trigger' code to warn the Dental Operator they are pressing on a patient's numb lip, allowing them to adjust without alarm.
+                    A polite 'trigger' code to warn the dentist they are pressing on a patient's numb lip, allowing them to adjust without alarm.
                 </div>
             </div>
 
@@ -319,7 +320,7 @@
 
                 <div class="card-title">Eye Contact <span class="toggle-icon">▼</span></div>
                 <div class="card-content">
-                    Watching the Dental Operator's eyes helps you anticipate their next move. It also conveys honesty and readiness.
+                    Watching the dentist's eyes helps you anticipate their next move. It also conveys honesty and readiness.
                 </div>
             </div>
         </div>
@@ -327,10 +328,10 @@
 
     <!-- TAB 3: AFTER -->
     <section id="after" class="content-section">
-        <h2>After Treatment & Teamwork</h2>
+        <h2>After Treatment and Teamwork</h2>
         
-        <!-- Image styled like your snippet -->
-        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/clean_up.jpg" 
+        <!-- GitHub Path -->
+        <img src="https://raw.githubusercontent.com/DAPALMS1/communication/main/images/after_treatment_and_teamwork.jpg" 
              alt="Dental team discussion" 
              class="styled-img" style="border-color: var(--med-purple);">
 
@@ -371,4 +372,3 @@
 
 </body>
 </html>
-
